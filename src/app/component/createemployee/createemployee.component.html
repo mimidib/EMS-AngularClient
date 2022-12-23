@@ -1,0 +1,58 @@
+<div class="container-lg">
+  <h2>Add an Employee</h2>
+
+  <!---we can use ngNativeValidate for native html validation form alerts-->
+  <form #form="ngForm" class="shadow p-3 mb-5 bg-white rounded">
+    <h5>Employee Details</h5>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input ngModel #firstName="ngModel" name="firstName" type="text" class="form-control" id="firstName"
+        placeholder="Enter First Name" value="{{employee.firstName}}" required minlength="2">
+      <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
+        <p *ngIf="firstName.errors?.['required']">Enter First Name</p>
+        <p *ngIf="firstName.errors?.['minlength']">Please enter minimum 2 characters</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input ngModel #lastName="ngModel" name="lastName" type="text" class="form-control" id="lastName"
+        placeholder="Enter Last Name" value="{{employee.lastName}}" required minlength="1">
+      <div class="alert alert-danger" *ngIf="lastName.touched && lastName.invalid">
+        <p *ngIf="lastName.errors?.['required']">Enter Last Name</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input ngModel #salary="ngModel" name="salary" type="text" class="form-control" id="salary"
+        placeholder="Enter Salary" value="{{employee.salary}}" required minlength="1">
+      <div class="alert alert-danger" *ngIf="salary.touched && salary.invalid">
+        <p *ngIf="salary.errors?.['required']">Enter a salary amount '0' is permitted</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <input ngModel #state="ngModel" type="text" name="state" class="form-control" id="state" placeholder="Enter State"
+        value="{{employee.state}}" required minlength="2">
+      <div class="alert alert-danger" *ngIf="state.touched && state.invalid">
+        <p *ngIf="state.errors?.['required']">Enter State</p>
+        <p *ngIf="state.errors?.['minlength']">Please enter at least 2 characters</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input ngModel #country="ngModel" type="text" name="country" class="form-control" id="country"
+        placeholder="Enter Country" value="{{employee.country}}" required minlength="2">
+      <div class="alert alert-danger" *ngIf="country.touched && country.invalid">
+        <p *ngIf="country.errors?.['required']">Enter Country</p>
+        <p *ngIf="country.errors?.['minlength']">Please enter at least 2 characters</p>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid && form.touched"
+      (click)="createEmployee(firstName.value, lastName.value, salary.value, state.value, country.value)">Add</button>
+  </form>
+</div>

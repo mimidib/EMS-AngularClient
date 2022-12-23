@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!--<img src="images/EmpMan.png" alt="Employee Manager Logo">-->
+    <a class="navbar-brand" routerLink="">EMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="employees">All Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="add-employee">Add Employee</a>
+        </li>
+      </ul>
+      <!-- Search form -->
+      <form class="form-inline my-2 my-lg-0">
+        <!--ngModule #searchQuery="ngModule"-->
+        <input class="form-control mr-sm-2" type="search" placeholder="Search an Employee.." aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        <!--getEmployeesBySearch(searchQuery.value)-->
+      </form>
+    </div>
+  </div>
+</nav>

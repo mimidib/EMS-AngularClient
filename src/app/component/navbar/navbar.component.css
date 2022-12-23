@@ -1,0 +1,16 @@
+.navbar a {
+  margin-inline-start: 1em;
+}
+.form-inline {
+  display: flex;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: auto;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  padding-inline-end: 0.8rem;
+}
+.mr-sm-2 {
+  margin-right: 0.5rem !important;
+  width: auto;
+}
